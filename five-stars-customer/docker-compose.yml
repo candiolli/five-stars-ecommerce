@@ -1,0 +1,20 @@
+#version: '3.7'
+#services:
+#  app-node:
+#    image: location-of-your-dynamodb-demo-app:latest
+#    container_name: app-node
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - "dynamodb-local"
+#    links:
+#      - "dynamodb-local"
+#    environment:
+#      - AWS_ACCESS_KEY_ID='DUMMYIDEXAMPLE'
+#      - AWS_SECRET_ACCESS_KEY='DUMMYEXAMPLEKEY'
+#      - REGION='eu-west-1'
+#  dynamodb-local:
+#    image: amazon/dynamodb-local
+#    container_name: dynamodb-local
+#    ports:
+#      - "8000:8000"
