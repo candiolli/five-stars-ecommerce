@@ -16,6 +16,11 @@
 
     <properties>
         <java.version>11</java.version>
+        <junit.vintage.version>5.4.2</junit.vintage.version>
+        <junit-platform.version>1.2.0</junit-platform.version>
+        <junit-jupiter.version>5.4.2</junit-jupiter.version>
+        <spring.version>5.0.6.RELEASE</spring.version>
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -42,6 +47,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -59,38 +70,62 @@
         </dependency>
 
         <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-dynamodb</artifactId>
-            <version>1.11.64</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.derjust</groupId>
-            <artifactId>spring-data-dynamodb</artifactId>
-            <version>5.1.0</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-core</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.vintage.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-migrationsupport</artifactId>
+            <version>${junit.vintage.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>DynamoDBLocal</artifactId>
-            <version>[1.12,2.0)</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.6.0</version>
         </dependency>
 
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>dynamodb-local-oregon</id>
-            <name>DynamoDB Local Release Repository</name>
-            <url>https://s3-us-west-2.amazonaws.com/dynamodb-local/release</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
