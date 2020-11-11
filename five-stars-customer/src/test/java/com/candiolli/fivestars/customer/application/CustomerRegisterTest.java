@@ -40,13 +40,15 @@ class CustomerRegisterTest {
         when(repository.save(any(Customer.class))).thenReturn(objectSaved);
 
         CustomerVO vo = CustomerVO.builder()
-                .cpf("111")
+                .cpf("83607056072")
                 .name("Silas")
                 .rg(123456L)
                 .build();
 
         Customer register = customerRegister.register(vo);
         Assertions.assertEquals(objectSaved.getId(), register.getId());
+
+        verify(customerRegister).register(vo);
     }
 
     @DisplayName("Validate cpf Success")
